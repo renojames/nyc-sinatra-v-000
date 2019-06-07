@@ -24,7 +24,7 @@ class FiguresController < ApplicationController
       @figure.titles << Title.find(title_id.to_i)
     end
 
-    binding.pry
+    @figure.save
 
   end
 
