@@ -17,7 +17,15 @@ class FiguresController < ApplicationController
   end
 
   post '/figures' do
+
+    @figure = Figure.new(name: params["figure"]["name"])
+
+    params["figure"]["title_ids"].each do |title_id|
+      @figure.titles << Title.find(title_id.to_i)
+    end
+
     binding.pry
+
   end
 
 end
