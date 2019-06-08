@@ -20,9 +20,19 @@ class FiguresController < ApplicationController
 
     @figure = Figure.new(name: params["figure"]["name"])
 
-    params["figure"]["title_ids"].each do |title_id|
-      @figure.titles << Title.find(title_id.to_i)
+    if !!params["figure"]["title_ids"]
+      params["figure"]["title_ids"].each do |title_id|
+        @figure.titles << Title.find(title_id.to_i)
+      end
     end
+
+    if !!params["figure"]["landmark_ids"]
+      params["figure"]["landmark_ids"].each do |landmark_id|
+        @figure.landmarks << Landmark.find(landmark_id.to_i)
+      end
+    end
+
+
 
     @figure.save
 
