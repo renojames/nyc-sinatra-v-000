@@ -32,11 +32,10 @@ class LandmarksController < ApplicationController
     end
 
     if !!params["year_completed"] && params["year_completed"] != ""
-      @landmark.year_completed = params["year_completed"]
+      @landmark.year_completed = params["landmark"]["year_completed"]
     end
 
     @landmark.save
-    binding.pry
     redirect "/landmarks/#{@landmark.id}"
 
   end
