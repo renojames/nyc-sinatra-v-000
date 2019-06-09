@@ -6,5 +6,10 @@
   </head>
   <body>
     <p><%= @figure.name %></p>
+
+    <% @figure.landmarks.each do |landmark| %>
+      <p><%= landmark.name %></p>
+    <% end %>
+
   </body>
 </html>

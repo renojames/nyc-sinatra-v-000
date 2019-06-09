@@ -6,9 +6,8 @@
   </head>
   <body>
 
-    <form action="/figures" method="post">
+    <form action="/figures/<%= @figure.id %>" method="post">
       <input id="hidden" type="hidden" name="_method" value="patch">
-      <input type="hidden" name="figure[id]" value="<%= @figure.id %>">
       <h3>Edit <%= @figure.name %>:</h3>
 
       <p>Name: <input id="figure_name" type="text" name="figure[name]"></p>
