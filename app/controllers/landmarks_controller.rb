@@ -27,7 +27,7 @@ class LandmarksController < ApplicationController
   patch '/landmarks/:id' do
     @landmark = Landmark.find(params[:id])
 
-    if !!params["name"] && params["name"] != ""
+    if !!params["landmark"]["name"] && params["name"] != ""
       @landmark.name = params["landmark"]["name"]
     end
 
