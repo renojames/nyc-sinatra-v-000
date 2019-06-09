@@ -5,8 +5,10 @@
 
 <form action="/landmarks/<%= @landmark.id %>" method="post">
   <input id="hidden" type="hidden" name="_method" value="patch">
-  <p>Name: <input id="landmark_name" type="text" name="landmark[name]" placeholder="@landmark.name"></p>
-  <p>Year Completed: <input id="landmark_year_completed" type="text" name="landmark[year_completed]" placeholder="@landmark.year_completed.to_s"></p>
+
+  <p>Name: <input id="name" type="text" name="landmark[name]" placeholder="@landmark.name"></p>
+  <p>Year Completed: <input id="year_completed" type="text" name="landmark[year_completed]" placeholder="@landmark.year_completed.to_s"></p>
+
   <input type="submit" value="Edit Landmark">
 </form>
 
