@@ -28,7 +28,7 @@ class LandmarksController < ApplicationController
     @landmark = Landmark.find(params[:id])
 
     if !!params["name"] && params["name"] != ""
-      @landmark.name = params["name"]
+      @landmark.name = params["landmark"]["name"]
     end
 
     if !!params["year_completed"] && params["year_completed"] != ""
