@@ -44,10 +44,10 @@ class FiguresController < ApplicationController
 
   end
 
-  get 'figures/:id/edit' do
-    @figure = Figures.find(params[:id])
-    @titles = Titles.all
-    @landmarks = Landmarks.all
+  get '/figures/:id/edit' do
+    @figure = Figure.find(params[:id])
+    @titles = Title.all
+    @landmarks = Landmark.all
     erb :"/figures/edit"
   end
 
